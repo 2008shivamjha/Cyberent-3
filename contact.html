@@ -131,24 +131,24 @@
                     <div class="col-lg-8">
                         <form class="form-contact contact_form" id="form" onsubmit="sendEmail(); reset(); return false;">
                             <div class="row ">
-                                <div class="col-sm-6 ">
+                                <div class="col-12 ">
                                     <div class="form-group ">
-                                        <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                                        <input type="text" class="form-control" id="message" placeholder="Message">
                                     </div>
                                 </div>
                                 <div class="col-sm-6 ">
                                     <div class="form-group ">
-                                        <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                                        <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 ">
+                                    <div class="form-group ">
+                                        <input type="email" class="form-control" id="email" placeholder="Your Email">
                                     </div>
                                 </div>
                                 <div class="col-12 ">
                                     <div class="form-group ">
-                                        <input type="text" class="form-control" id="subject" placeholder="Subject" required>
-                                    </div>
-                                </div>
-                                <div class="col-12 ">
-                                    <div class="form-group ">
-                                        <input type="text" class="form-control" id="message" placeholder="Message" required>
+                                        <input type="text" class="form-control" id="subject" placeholder="Subject">
                                     </div>
                                 </div>
                             </div>
@@ -348,7 +348,7 @@
             Email.send({
                 SecureToken: "75c49144-75d6-4cb7-8b1b-7512090fef51",
                 To: 'contact.cyberent3@gmail.com',
-                From: "contact.cyberent3@gmail.com",
+                From: "jhashivam2008@gmail.com",
                 Subject: "CONTACT US FORM",
                 Body: body,
 
