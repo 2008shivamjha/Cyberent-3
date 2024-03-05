@@ -152,9 +152,13 @@
                                     </div>
                                 </div>
                             </div>
+                            <p id="msg" style="color:green; display:block;"></p>
+
                             <div class="form-group mt-3 ">
                                 <button type="submit " Value="Send" class="button button-contactForm boxed-btn ">Send</button>
                             </div>
+
+                            <br>
                         </form>
                     </div>
                     <div class="col-lg-3 offset-lg-1 ">
@@ -178,6 +182,9 @@
                                 <h3>
                                     <a href="mailto:contact.cyberent3@gmail.com">contact.cyberent3@gmail.com</a></h3>
                                 <p>Send us your query</p>
+
+                                <br>
+
                             </div>
                         </div>
                     </div>
@@ -346,15 +353,20 @@
             let body = "Name: " + name + "<br> Email: " + email + "<br> Subject: " + subject + "<br> Message: " + message;
             console.log(body);
             Email.send({
-                SecureToken: "75c49144-75d6-4cb7-8b1b-7512090fef51",
-                To: 'contact.cyberent3@gmail.com',
-                From: "jhashivam2008@gmail.com",
-                Subject: "CONTACT US FORM",
-                Body: body,
+                    SecureToken: "75c49144-75d6-4cb7-8b1b-7512090fef51",
+                    To: 'contact.cyberent3@gmail.com',
+                    From: "contact.cyberent3@gmail.com",
+                    Subject: "CONTACT US FORM",
+                    Body: body,
 
-            }).then(
-                message => alert("Message sent Successfully!!")
-            );
+                }).then(response => {
+                    msg.innerHTML = "Your request has been received !!"
+                    setTimeout(function() {
+                        msg.innerHTML = ""
+                    }, 3000)
+                    form.reset()
+                })
+                .catch(error => console.error('Error!', error.message))
         }
     </script>
 
