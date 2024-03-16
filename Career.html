@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title> C Y B E R E N T 3 | Contact - Us</title>
+    <title> C Y B E R E N T 3 | Career</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <link rel="manifest" href="site.webmanifest"> -->
@@ -85,7 +85,6 @@
                                         </li>
                                         <li><a href="career.html">Career</a></li>
                                         <li><a href="contact.html">contact</a></li>
-
                                     </ul>
                                 </nav>
                             </div>
@@ -109,7 +108,7 @@
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="hero-cap hero-cap2 pt-70 text-center">
-                                <h2>Contact Us</h2>
+                                <h2>Student Internship Program </h2>
                             </div>
                         </div>
                     </div>
@@ -129,29 +128,60 @@
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <h2 class="contact-title">Get in Touch</h2>
+                        <h2 class="contact-title">Registration Here</h2>
                     </div>
                     <div class="col-lg-8">
                         <form class="form-contact contact_form" id="form" onsubmit="sendEmail(); reset(); return false;">
                             <div class="row ">
-                                <div class="col-12 ">
+                                <div class="col-sm-6 ">
                                     <div class="form-group ">
-                                        <input type="text" class="form-control" id="message" placeholder="Message">
+                                        <input type="text" class="form-control" id="name" placeholder="Your Name" required>
                                     </div>
                                 </div>
                                 <div class="col-sm-6 ">
                                     <div class="form-group ">
-                                        <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                        <input type="email" class="form-control" id="email" placeholder="Your Email" required>
                                     </div>
                                 </div>
-                                <div class="col-sm-6 ">
+                                <div class="col-6 ">
                                     <div class="form-group ">
-                                        <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                        <input type="text" class="form-control" id="phone" placeholder="Phone Number" required>
+                                    </div>
+                                </div>
+                                <div class="col-6 ">
+                                    <div class="form-group ">
+                                        <input type="text" class="form-control" id="dob" placeholder="Date Of Birth (YYYY-MM-DD)" required>
+                                    </div>
+                                </div>
+                                <div class="col-6 ">
+                                    <div class="form-group ">
+                                        <input type="text" class="form-control" id="yog" placeholder="Year of Graduation" required>
+                                    </div>
+                                </div>
+                                <div class="col-6 ">
+                                    <div class="form-group ">
+                                        <select name="interest" class="form-control" id="role" placeholder="Interested In">
+                                            <option value="Interested in">Interested in</option>
+                                            <option value="Technical Content Writing">Technical Content Writing</option>
+                                            <option value="Cybersecurity Intern">Cybersecurity Intern</option>
+                                            <option value="Shell Scripting">Shell Scripting</option>
+                                            <option value="Malware Analysis">Malware Analysis</option>
+                                            <option value="Reverse Engineering">Reverse Engineering</option>
+                                            <option value="Web Development">Web Development</option>
+                                            <option value="Android Development">Android Development</option>
+                                            <option value="Web Penetration Testing">Web Penetration Testing</option>
+                                            <option value="Mobile Penetration Testing">Mobile Penetration Testing</option>
+                                            </select>
                                     </div>
                                 </div>
                                 <div class="col-12 ">
                                     <div class="form-group ">
-                                        <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                        <input type="text" class="form-control" id="ts" placeholder="Technical Skills" required>
+                                    </div>
+                                </div>
+                                <div class="col-12 ">
+                                    <div class="form-group ">
+                                        <input type="text" class="form-control" id="add" placeholder="Permanent Address" required>
                                     </div>
                                 </div>
                             </div>
@@ -351,15 +381,19 @@
         function sendEmail() {
             let name = document.getElementById("name").value;
             let email = document.getElementById("email").value;
-            let subject = document.getElementById("subject").value;
-            let message = document.getElementById("message").value;
-            let body = "Name: " + name + "<br> Email: " + email + "<br> Subject: " + subject + "<br> Message: " + message;
+            let phone = document.getElementById("phone").value;
+            let dob = document.getElementById("dob").value;
+            let yog = document.getElementById("yog").value;
+            let role = document.getElementById("role").value;
+            let ts = document.getElementById("ts").value;
+            let add = document.getElementById("add").value;
+            let body = "Name: " + name + "<br> Email: " + email + "<br> Phone: " + phone + "<br> Date of Birth: " + dob + "<br> Year of Graduation: " + yog + "<br> Role: " + role + "<br> Technical Skills: " + ts + "<br> Address: " + add;
             console.log(body);
             Email.send({
                     SecureToken: "75c49144-75d6-4cb7-8b1b-7512090fef51",
                     To: 'contact.cyberent3@gmail.com',
                     From: "contact.cyberent3@gmail.com",
-                    Subject: "CONTACT US FORM",
+                    Subject: "Student Internship Prgram",
                     Body: body,
 
                 }).then(response => {
